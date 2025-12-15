@@ -25,9 +25,10 @@
       <div class="flex gap-3 mb-8 overflow-x-auto">
     <button class="tab-btn active-tab" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="platforms">Platforms</button>
-    <button class="tab-btn" data-tab="growth">Growth</button>
-    <button class="tab-btn" data-tab="achievements">Achievements</button>
-    <button class="tab-btn" data-tab="future">Future</button>
+        <button class="tab-btn" data-tab="growth">Growth</button>
+        <button class="tab-btn" data-tab="achievements">Achievements</button>
+        <button class="tab-btn" data-tab="challenges">Challenges</button>
+        <button class="tab-btn" data-tab="future">Future</button>
   </div>
 
       <!-- ============== OVERVIEW ============== -->
@@ -521,6 +522,44 @@
           </div>
     </div>
   </section>
+
+      <!-- ============== CHALLENGES (before Future) ============== -->
+      <section id="challenges" class="tab-section hidden space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Operational & Performance Challenges</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Based on the performance data and campaign execution experience, the following issues are limiting growth efficiency and engagement quality.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r">
+              <h3 class="font-semibold text-red-900 mb-2">Engagement & Responsiveness</h3>
+              <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                <li>Ads sometimes continue into weekends, leaving inquiries unreplied and reducing daily engagement.</li>
+                <li>During ad runs, inbound volume can overwhelm a single responder; customer responses need delegation to a secondary party.</li>
+                <li>No consistent internet throughout the week, causing delayed responses and monitoring gaps.</li>
+              </ul>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r">
+              <h3 class="font-semibold text-amber-900 mb-2">Tracking & Infrastructure</h3>
+              <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside">
+                <li>Poor return-on-investment tracking; recommend implementing POS or digital invoicing for clear attribution.</li>
+                <li>Creative tooling is personal (Canva personal account); need a designated Theotoka Canva account for ownership, governance, and cost tracking.</li>
+                <li>Analytics constraints on Twitter limit insight; platform remains monitored but under-instrumented.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Data-Observed Risks</h3>
+          <ul class="space-y-3 text-sm text-gray-700 list-disc list-inside">
+            <li>Weekend response gaps during paid campaigns risk lower conversion despite strong weekday interactions.</li>
+            <li>Lead and messaging spikes during ads stress single-thread handling; delayed replies reduce close rates.</li>
+            <li>ROI visibility is limited without POS/digital invoicing integration, making optimization and budget defense harder.</li>
+            <li>Creative asset ownership and consistency risk persists while relying on a personal Canva account.</li>
+          </ul>
+        </div>
+      </section>
 
       <!-- ============== FUTURE ============== -->
       <section id="future" class="tab-section hidden space-y-6">
