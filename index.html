@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Marketing Annual Report 2025 | Theotoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-50">
+  <div class="min-h-screen bg-gray-50 p-6 md:p-10">
+    <div class="max-w-7xl mx-auto">
+  <!-- Header -->
+      <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg shadow-lg mb-8">
+        <h1 class="text-4xl font-bold mb-2">Digital Marketing Annual Report 2025</h1>
+        <p class="text-xl opacity-90">Theotoka Laboratory Solutions</p>
+        <p class="text-sm opacity-75 mt-2">April 1 - December 12, 2025 | Prepared by: Pervious Chileya, Digital Marketing Manager</p>
+      </header>
+
+  <!-- Navigation -->
+      <div class="flex gap-3 mb-8 overflow-x-auto">
+    <button class="tab-btn active-tab" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="platforms">Platforms</button>
+    <button class="tab-btn" data-tab="growth">Growth</button>
+    <button class="tab-btn" data-tab="achievements">Achievements</button>
+    <button class="tab-btn" data-tab="future">Future</button>
+  </div>
+
+      <!-- ============== OVERVIEW ============== -->
+      <section id="overview" class="tab-section space-y-8">
+        <!-- High-level visual snapshot -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Performance Snapshot</h2>
+          <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+            <div>
+              <h3 class="text-lg font-semibold mb-3 text-gray-800">Facebook Follower Growth (Apr–Dec)</h3>
+              <div class="chart-wrapper">
+                <canvas id="fbLineChart"></canvas>
+              </div>
+              <p class="text-xs text-gray-600 mt-2">
+                Steady organic growth from 4,560 to 4,785 followers
+                <span class="text-green-600 font-semibold">(+225, +7.3%)</span>.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-3 text-gray-800">Email & Lead Growth</h3>
+              <div class="chart-wrapper">
+                <canvas id="emailLeadChart"></canvas>
+              </div>
+              <p class="text-xs text-gray-600 mt-2">
+                Email database grew from 228 to 366 contacts
+                <span class="text-green-600 font-semibold">(+60%)</span> with a
+                <span class="text-green-600 font-semibold">767%+</span> increase in total leads.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Executive summary and starting/current state -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Executive Summary</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            From April to December 2025, Theotoka Laboratory Solutions underwent a complete digital transformation.
+            Starting with only a Facebook page, we built a comprehensive multi-platform digital marketing ecosystem with
+            elevated brand quality, expanded social presence, and an engaged Theotoka Community.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mt-6">
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h3 class="font-semibold text-blue-900 mb-2">Starting Point (April 1)</h3>
+              <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>Single platform: Facebook (4,560 followers)</li>
+                <li>228 emails in database</li>
+                <li>No community engagement platform</li>
+                <li>Limited brand visibility</li>
+                <li>No LinkedIn or Instagram presence</li>
+              </ul>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h3 class="font-semibold text-green-900 mb-2">Current State (December 12)</h3>
+              <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>4 active platforms (FB, LinkedIn, Instagram, Twitter)</li>
+                <li>366 emails <span class="text-green-600 font-semibold">(60% growth)</span></li>
+                <li>125-member engaged community</li>
+                <li>Elevated high-quality branding</li>
+                <li>5,654+ total social followers</li>
+              </ul>
+            </div>
+          </div>
+    </div>
+
+        <!-- Key Metrics -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="metric-card border-l-4 border-blue-500">
+        <p class="metric-title">Facebook Followers</p>
+        <p class="metric-value">4,785</p>
+            <p class="metric-sub text-green-600 font-semibold">+225 followers (+4.9%)</p>
+      </div>
+          <div class="metric-card border-l-4 border-green-500">
+        <p class="metric-title">LinkedIn Followers</p>
+        <p class="metric-value">869</p>
+            <p class="metric-sub text-green-600 font-semibold">Built from zero</p>
+      </div>
+          <div class="metric-card border-l-4 border-amber-400">
+        <p class="metric-title">Email Database</p>
+        <p class="metric-value">366</p>
+            <p class="metric-sub text-green-600 font-semibold">+60% growth</p>
+      </div>
+          <div class="metric-card border-l-4 border-orange-500">
+        <p class="metric-title">Total Leads</p>
+        <p class="metric-value">130+</p>
+            <p class="metric-sub text-green-600 font-semibold">+767% increase</p>
+          </div>
+        </div>
+
+        <!-- Facebook Highlight -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4">Facebook: Our Social Media Stronghold</h3>
+          <div class="grid md:grid-cols-4 gap-4">
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-sm opacity-90">Total Views</p>
+              <p class="text-3xl font-bold">373,935</p>
+              <p class="text-xs opacity-75 mt-1">Apr 1 - Dec 12</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-sm opacity-90">Interactions</p>
+              <p class="text-3xl font-bold">3,970</p>
+              <p class="text-xs opacity-75 mt-1"><span class="text-green-300 font-semibold">+132.8% growth</span></p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-sm opacity-90">Messaging Conversations</p>
+              <p class="text-3xl font-bold">76</p>
+              <p class="text-xs opacity-75 mt-1"><span class="text-green-300 font-semibold">+76.7% growth</span></p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-sm opacity-90">New Followers</p>
+              <p class="text-3xl font-bold">297</p>
+              <p class="text-xs opacity-75 mt-1"><span class="text-green-300 font-semibold">+7.3% growth rate</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn Highlight -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4">LinkedIn: Second Social Media Stronghold</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white bg-opacity-20 p-4 rounded text-center">
+              <p class="text-sm opacity-90">Total Followers</p>
+              <p class="text-3xl font-bold">869</p>
+              <p class="text-xs opacity-75 mt-1">Built from scratch</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded text-center">
+              <p class="text-sm opacity-90">Impressions</p>
+              <p class="text-3xl font-bold">6,600</p>
+              <p class="text-xs opacity-75 mt-1">Apr 1 - Dec 12</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded text-center">
+              <p class="text-sm opacity-90">Page Views</p>
+              <p class="text-3xl font-bold">303</p>
+              <p class="text-xs opacity-75 mt-1">Professional engagement</p>
+            </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- ============== PLATFORMS ============== -->
+      <section id="platforms" class="tab-section hidden space-y-6">
+        <!-- Facebook -->
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-blue-500">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-xl">
+              f
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Facebook</h3>
+              <p class="text-sm text-gray-600">Primary Social Media Stronghold</p>
+            </div>
+            <span class="ml-auto bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+              Strongest Platform
+            </span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="space-y-3">
+              <h4 class="font-semibold mb-3">Overall Performance (Apr 1 - Dec 12)</h4>
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <span class="text-gray-700">Total Views</span>
+                <span class="font-bold text-blue-600">373,935</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <span class="text-gray-700">Interactions</span>
+                <span class="font-bold text-blue-600">3,970 (+132.8%)</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <span class="text-gray-700">Total Followers</span>
+                <span class="font-bold text-blue-600">4,785</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <span class="text-gray-700">New Followers</span>
+                <span class="font-bold text-blue-600">+297 (+7.3%)</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <span class="text-gray-700">Messaging Conversations</span>
+                <span class="font-bold text-blue-600">76 (+76.7%)</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-3">Follower Growth Timeline</h4>
+              <div class="chart-wrapper">
+                <canvas id="facebookGrowthChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+            <p class="text-gray-700">
+              <strong>Strategic Insight:</strong> Facebook demonstrates steady organic growth with exceptional engagement rates.
+              The 132.8% increase in interactions and 76.7% growth in messaging conversations shows strong audience connection.
+              This platform serves as our primary customer touchpoint and lead generation channel.
+            </p>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-blue-600">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-600 rounded flex items-center justify-center text-white font-bold">
+              in
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">LinkedIn</h3>
+              <p class="text-sm text-gray-600">Second Social Media Stronghold - Professional Network</p>
+            </div>
+            <span class="ml-auto bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+              High Growth
+            </span>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-blue-50 p-4 rounded text-center">
+              <p class="text-sm text-gray-600 mb-1">Total Followers</p>
+              <p class="text-3xl font-bold text-blue-600">869</p>
+              <p class="text-xs text-green-600 mt-1">Established from zero</p>
+            </div>
+            <div class="bg-blue-50 p-4 rounded text-center">
+              <p class="text-sm text-gray-600 mb-1">Impressions</p>
+              <p class="text-3xl font-bold text-blue-600">6,600</p>
+              <p class="text-xs text-gray-600 mt-1">Apr 1 - Dec 12</p>
+            </div>
+            <div class="bg-blue-50 p-4 rounded text-center">
+              <p class="text-sm text-gray-600 mb-1">Page Views</p>
+              <p class="text-3xl font-bold text-blue-600">303</p>
+              <p class="text-xs text-gray-600 mt-1">Professional engagement</p>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-4">
+            <p class="text-gray-700">
+              <strong>Strategic Insight:</strong> LinkedIn page established and grew to 869 followers, positioning Theotoka
+              in the professional B2B space. This platform excels for laboratory sector networking, professional lead generation,
+              and establishing thought leadership in the industry.
+            </p>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-pink-500">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded flex items-center justify-center text-white font-bold">
+              IG
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Instagram</h3>
+              <p class="text-sm text-gray-600">Visual Brand Presence - Established</p>
+            </div>
+            <span class="ml-auto bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+              Active & Growing
+            </span>
+          </div>
+
+          <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mb-4">
+            <p class="text-gray-700">
+              <strong>Platform Status:</strong> Instagram presence successfully established during the period.
+              Platform is active with regular content posting, focusing on visual storytelling of laboratory solutions,
+              product showcases, and behind-the-scenes content.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded">
+            <p class="text-sm text-gray-700">
+              <strong>Next Phase:</strong> Instagram is positioned for accelerated growth in 2026 with planned advertising campaigns
+              and influencer collaborations to reach younger professional demographics and expand visual brand recognition.
+            </p>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="bg-white p-6 rounded-lg shadow border-t-4 border-gray-400">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gray-700 rounded flex items-center justify-center text-white font-bold">
+              𝕏
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Twitter (X)</h3>
+              <p class="text-sm text-gray-600">Experimental Platform - Limited Performance</p>
+            </div>
+            <span class="ml-auto bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+              Monitoring
+            </span>
+          </div>
+
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+            <p class="text-gray-700 mb-3">
+              <strong>Current Challenge:</strong> Twitter page established but performance tracking is limited due to
+              the inability to access detailed analytics without a subscription. This restricts our ability to measure
+              engagement, reach, and optimize content strategy effectively.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded">
+            <p class="text-sm text-gray-700 mb-2"><strong>Strategic Considerations:</strong></p>
+            <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+              <li>Analytics subscription required for performance insights</li>
+              <li>Platform maintains presence but not priority for 2026</li>
+              <li>Resources focused on higher-performing platforms (Facebook, LinkedIn)</li>
+              <li>Will reassess if industry engagement shifts toward platform</li>
+      </ul>
+          </div>
+        </div>
+
+        <!-- Platform Summary -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4">Multi-Platform Summary</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm opacity-75 mb-2">Total Social Media Followers</p>
+              <p class="text-4xl font-bold mb-1">5,654+</p>
+              <p class="text-xs opacity-75">Across Facebook, LinkedIn, Instagram, Twitter</p>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-sm">
+                <span>Facebook (Stronghold)</span>
+                <span class="font-semibold">4,785</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span>LinkedIn (Stronghold)</span>
+                <span class="font-semibold">869</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span>Instagram (Growing)</span>
+                <span class="font-semibold">Active</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span>Twitter (Monitoring)</span>
+                <span class="font-semibold">Limited Data</span>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
+
+      <!-- ============== GROWTH ============== -->
+      <section id="growth" class="tab-section hidden space-y-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">Growth Trajectory Analysis</h2>
+
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold mb-4">Facebook Follower Growth (April - December)</h3>
+            <div class="chart-wrapper">
+              <canvas id="fbLineChart"></canvas>
+            </div>
+            <p class="text-sm text-gray-600 mt-3">
+              Steady organic growth from 4,560 to 4,785 followers (+225 net growth, +7.3%).
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold mb-4">Email Database & Lead Generation</h3>
+            <div class="chart-wrapper">
+              <canvas id="emailLeadChart"></canvas>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Community Growth</h3>
+            <div class="chart-wrapper">
+              <canvas id="communityChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Engagement Performance Comparison</h3>
+          <div class="chart-wrapper">
+            <canvas id="engagementChart"></canvas>
+          </div>
+    </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+            <p class="text-sm text-gray-600 mb-1">Facebook Total Views</p>
+            <p class="text-3xl font-bold text-blue-600">373,935</p>
+            <p class="text-xs text-gray-600 mt-2">Comprehensive reach across all content</p>
+          </div>
+          <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+            <p class="text-sm text-gray-600 mb-1">LinkedIn Impressions</p>
+            <p class="text-3xl font-bold text-green-600">6,600</p>
+            <p class="text-xs text-gray-600 mt-2">Professional audience engagement</p>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+            <p class="text-sm text-gray-600 mb-1">Total Social Reach</p>
+            <p class="text-3xl font-bold text-purple-600">380,535+</p>
+            <p class="text-xs text-gray-600 mt-2">Combined platform impressions</p>
+          </div>
+    </div>
+  </section>
+
+      <!-- ============== ACHIEVEMENTS ============== -->
+      <section id="achievements" class="tab-section hidden space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">Major Achievements & Milestones</h2>
+          <div class="space-y-6">
+            <div class="border-l-4 border-blue-500 pl-4 bg-blue-50 p-4 rounded-r">
+              <h3 class="font-bold text-lg mb-2 text-blue-900">Elevated Brand Quality & Consistency</h3>
+              <p class="text-gray-700">
+                Established and maintained high-quality branding standards across all platforms and materials.
+                Developed comprehensive brand assets including Kitwe billboard, company brochures, branded periodic table,
+                pull-up banners, teardrops, and chemical/reagent stickers. Launched online catalogue with professional design standards.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-green-500 pl-4 bg-green-50 p-4 rounded-r">
+              <h3 class="font-bold text-lg mb-2 text-green-900">Multi-Platform Digital Ecosystem Established</h3>
+              <p class="text-gray-700 mb-2">Transformed from single-platform presence to comprehensive multi-channel strategy:</p>
+              <ul class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li><strong>LinkedIn:</strong> Established from zero to 869 followers - now second social media stronghold</li>
+                <li><strong>Instagram:</strong> Successfully launched and activated visual brand presence</li>
+                <li><strong>Twitter:</strong> Platform established (monitoring performance constraints)</li>
+                <li><strong>Facebook:</strong> Strengthened as primary stronghold with 132.8% interaction growth</li>
+              </ul>
+            </div>
+
+            <div class="border-l-4 border-purple-500 pl-4 bg-purple-50 p-4 rounded-r">
+              <h3 class="font-bold text-lg mb-2 text-purple-900">Exceptional Lead Generation Performance</h3>
+              <p class="text-gray-700">
+                Achieved 767% increase in lead generation (from 15 to 130+ total leads over the period),
+                with May showing a record 230% month-over-month increase. Established systematic lead tracking
+                and pipeline integration with marketing software.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-yellow-500 pl-4 bg-yellow-50 p-4 rounded-r">
+              <h3 class="font-bold text-lg mb-2 text-yellow-900">Theotoka Community Platform Launch</h3>
+              <p class="text-gray-700">
+                Built and grew the Theotoka Community from concept to 125 engaged members (105% growth),
+                with 40 active participants in the WhatsApp group. Created a direct, dedicated communication
+                channel with clients and prospects, establishing community-driven engagement model.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-red-500 pl-4 bg-red-50 p-4 rounded-r">
+              <h3 class="font-bold text-lg mb-2 text-red-900">Strategic Infrastructure Development</h3>
+              <p class="text-gray-700">
+                Successfully integrated sales pipeline with marketing software for enhanced lead tracking and conversion monitoring.
+                Laid groundwork for ROI measurement and data-driven decision making. Prepared Theotoka Story video campaign
+                and influencer collaboration framework.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">By The Numbers: Year in Review</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+              <p class="text-4xl font-bold text-blue-600 mb-2">5,654+</p>
+              <p class="text-gray-700 font-medium">Total Social Followers</p>
+              <p class="text-sm text-gray-600 mt-1">Across all platforms</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+              <p class="text-4xl font-bold text-green-600 mb-2">130+</p>
+              <p class="text-gray-700 font-medium">Total Leads Generated</p>
+              <p class="text-sm text-gray-600 mt-1">767% increase</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+              <p class="text-4xl font-bold text-purple-600 mb-2">380,535+</p>
+              <p class="text-gray-700 font-medium">Total Impressions/Views</p>
+              <p class="text-sm text-gray-600 mt-1">Combined reach</p>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg">
+              <p class="text-4xl font-bold text-yellow-600 mb-2">132.8%</p>
+              <p class="text-gray-700 font-medium">Facebook Interaction Growth</p>
+              <p class="text-sm text-gray-600 mt-1">Engagement surge</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Advertising & Investment</h2>
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+            <p class="text-gray-700 mb-2">
+              <span class="font-semibold">Total Ad Spend:</span> K900 (2 Facebook campaigns in July)
+            </p>
+            <p class="text-sm text-gray-600">
+              Note: Primary focus on organic growth strategy while establishing advertising infrastructure.
+              Most achievements delivered through high-quality content and strategic targeting without paid promotion.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-blue-50 p-4 rounded">
+              <h4 class="font-semibold mb-2">Current Advertising</h4>
+              <p class="text-sm text-gray-700">Facebook-only advertising with limited budget allocation</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded">
+              <h4 class="font-semibold mb-2">2026 Expansion Plan</h4>
+              <p class="text-sm text-gray-700">Multi-platform advertising across Facebook, Instagram, and LinkedIn</p>
+            </div>
+          </div>
+    </div>
+  </section>
+
+      <!-- ============== FUTURE ============== -->
+      <section id="future" class="tab-section hidden space-y-6">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-3xl font-bold mb-4">Strategic Roadmap: 2026 & Beyond</h2>
+          <p class="text-lg opacity-90">
+            Building on our strong foundation, we're positioned to scale our digital presence
+            and maximize ROI through multi-platform advertising and enhanced tracking capabilities.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">
+            <span class="bg-red-500 text-white px-3 py-1 rounded mr-2">Priority 1</span>
+            Multi-Platform Advertising Expansion
+          </h3>
+          <div class="space-y-4">
+            <div class="bg-gradient-to-r from-red-50 to-orange-50 p-4 rounded-lg border-l-4 border-red-500">
+              <h4 class="font-semibold mb-2 text-red-900">Immediate Action: Q1 2026</h4>
+              <p class="text-gray-700 mb-3">
+                <strong>Shift from Facebook-only to multi-platform advertising strategy.</strong> Currently, all paid advertising
+                is concentrated on Facebook. This limits our reach and testing capabilities.
+              </p>
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-white p-3 rounded shadow-sm">
+                  <p class="font-semibold text-sm text-blue-600 mb-1">LinkedIn Ads</p>
+                  <p class="text-xs text-gray-600">Target B2B decision-makers, laboratory managers, and procurement officers</p>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm">
+                  <p class="font-semibold text-sm text-pink-600 mb-1">Instagram Ads</p>
+                  <p class="text-xs text-gray-600">Visual storytelling campaigns, product showcases, and brand awareness</p>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm">
+                  <p class="font-semibold text-sm text-blue-500 mb-1">Enhanced Facebook</p>
+                  <p class="text-xs text-gray-600">Optimized campaigns with better targeting and creative variations</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded">
+              <p class="text-sm text-gray-700">
+                <strong>Expected Impact:</strong> Diversified advertising reduces platform dependency, enables A/B testing
+                across channels, and reaches different audience segments based on platform demographics and user behavior.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">
+            <span class="bg-orange-500 text-white px-3 py-1 rounded mr-2">Priority 2</span>
+            Enhanced ROI Tracking & Analytics
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-orange-50 p-4 rounded border-l-4 border-orange-500">
+              <p class="text-gray-700 mb-2">
+                Refine conversion tracking and ROI measurement in collaboration with sales team.
+                Current infrastructure established but requires optimization for accurate attribution.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-4 rounded">
+                <h4 class="font-semibold text-sm mb-2">Implementation Goals</h4>
+                <ul class="text-xs text-gray-600 space-y-1 list-disc list-inside">
+                  <li>Full lead-to-sale attribution tracking</li>
+                  <li>Platform-specific ROI measurement</li>
+                  <li>Real-time dashboard for decision-making</li>
+                  <li>Automated reporting integration</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 p-4 rounded">
+                <h4 class="font-semibold text-sm mb-2">Expected Benefits</h4>
+                <ul class="text-xs text-gray-600 space-y-1 list-disc list-inside">
+                  <li>Data-driven budget allocation</li>
+                  <li>Campaign optimization insights</li>
+                  <li>Clear demonstration of marketing value</li>
+                  <li>Improved forecasting accuracy</li>
+      </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">
+            <span class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Priority 3</span>
+            Website Launch & Digital Hub
+          </h3>
+          <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
+            <p class="text-gray-700 mb-2">
+              <strong>Status:</strong> Website development in progress with external vendor. Target launch: Q1 2026
+            </p>
+            <p class="text-sm text-gray-600 mt-3">
+              The website will serve as our central digital hub, consolidating all platforms and providing
+              comprehensive product information, online catalogue integration, and lead capture capabilities.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Additional Strategic Initiatives</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="border-l-4 border-purple-500 pl-4">
+              <h4 class="font-semibold mb-2">Theotoka Community Phase 3</h4>
+              <p class="text-sm text-gray-700">
+                Expand community engagement with exclusive content, member benefits, and interactive events.
+                Target: 200+ engaged members by mid-2026.
+              </p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h4 class="font-semibold mb-2">Theotoka Story Campaign</h4>
+              <p class="text-sm text-gray-700">
+                Launch video campaign with influencer partnerships. Script completed, production ready.
+                Target: Viral brand awareness and emotional connection.
+              </p>
+            </div>
+            <div class="border-l-4 border-green-500 pl-4">
+              <h4 class="font-semibold mb-2">Content Strategy Evolution</h4>
+              <p class="text-sm text-gray-700">
+                Develop platform-specific content strategies optimized for each channel's unique audience
+                and engagement patterns.
+              </p>
+            </div>
+            <div class="border-l-4 border-red-500 pl-4">
+              <h4 class="font-semibold mb-2">Lead Nurturing Automation</h4>
+              <p class="text-sm text-gray-700">
+                Implement email marketing automation and lead nurturing sequences to improve
+                conversion rates from the growing email database (366 contacts).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-3">2026 Targets Summary</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-2xl font-bold">30%+</p>
+              <p class="text-sm opacity-90">Monthly Lead Growth Target</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-2xl font-bold">3-4x</p>
+              <p class="text-sm opacity-90">Advertising Budget Increase</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded">
+              <p class="text-2xl font-bold">8,000+</p>
+              <p class="text-sm opacity-90">Total Social Followers Goal</p>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+      <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-8 rounded-lg shadow-lg mt-8">
+        <h2 class="text-2xl font-bold mb-4">Conclusion: Strong Foundation, Ambitious Future</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          In eight months, we transformed Theotoka Laboratory Solutions from a single-platform presence into a
+          comprehensive, multi-channel digital brand. With elevated branding quality, 5,654+ social followers across
+          four platforms, 767% lead generation growth, and a thriving community of 125 members, we've established
+          the foundation for sustainable digital growth.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          As we enter 2026, our focus shifts to scaling these achievements through multi-platform advertising,
+          enhanced ROI tracking, and strategic content optimization. The groundwork is laid. The systems are in place.
+          Now we scale.
+        </p>
+        <div class="text-center mt-6 text-gray-300 text-sm">
+          <p class="font-semibold">Report prepared by Pervious Chileya, Digital Marketing Manager</p>
+          <p class="mt-1">Theotoka Laboratory Solutions | December 2025</p>
+          <p class="mt-2 text-xs text-gray-400">Period Covered: April 1 - December 12, 2025</p>
+        </div>
+  </footer>
+    </div>
+</div>
+
+  <!-- Styles -->
+<style>
+  .tab-btn {
+      padding: 12px 24px;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      background: #ffffff;
+      color: #374151;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    }
+    .tab-btn:hover {
+      background: #f3f4f6;
+  }
+  .active-tab {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+    .tab-section {
+      animation: fadeIn 0.2s ease-in-out;
+  }
+    .chart-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 240px;
+    }
+    @media (min-width: 1024px) {
+      .chart-wrapper {
+        height: 220px;
+      }
+  }
+  .metric-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .metric-title {
+      font-size: 0.875rem;
+      color: #6b7280;
+  }
+  .metric-value {
+      font-size: 1.875rem;
+      font-weight: 700;
+  }
+  .metric-sub {
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin-top: 0.25rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+  <!-- Data & Charts -->
+<script>
+    // Data mirrors the TSX source
+    const facebookGrowthData = [
+      { month: 'Apr', followers: 4560 },
+      { month: 'May', followers: 4553 },
+      { month: 'Jul', followers: 4640 },
+      { month: 'Aug', followers: 4695 },
+      { month: 'Sep', followers: 4722 },
+      { month: 'Oct', followers: 4745 },
+      { month: 'Dec', followers: 4785 }
+    ];
+
+    const timelineData = [
+      { month: 'April', emails: 228, leads: 15, community: 61 },
+      { month: 'May', emails: 274, leads: 50, community: 75 },
+      { month: 'July', emails: 269, leads: 18, community: 106 },
+      { month: 'Aug-Oct', emails: 366, leads: 47, community: 125 }
+    ];
+
+    const engagementData = [
+      { metric: 'FB Interactions', value: 3970 },
+      { metric: 'FB Views', value: 373935 },
+      { metric: 'FB Messaging', value: 76 },
+      { metric: 'LinkedIn Views', value: 303 }
+    ];
+
+    // Tabs
+    const buttons = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.tab-section');
+  buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active-tab'));
+        sections.forEach(s => s.classList.add('hidden'));
+        btn.classList.add('active-tab');
+        document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Charts
+    const baseOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: true } },
+      layout: { padding: { top: 4, right: 4, bottom: 4, left: 4 } }
+    };
+
+    const makeLine = (ctx, labels, datasets) => new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        ...baseOptions,
+        scales: { y: { beginAtZero: false } }
+      }
+    });
+
+    const makeBar = (ctx, labels, datasets, stacked = false) => new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets },
+      options: {
+        ...baseOptions,
+        scales: {
+          x: { stacked },
+          y: { stacked, beginAtZero: true }
+        }
+      }
+    });
+
+    // Facebook growth area (rendered as line for simplicity)
+    const fbLineCtx = document.getElementById('fbLineChart');
+    makeLine(
+      fbLineCtx,
+      facebookGrowthData.map(d => d.month),
+      [{
+        label: 'Facebook Followers',
+        data: facebookGrowthData.map(d => d.followers),
+        borderColor: '#0088FE',
+        backgroundColor: 'rgba(0,136,254,0.2)',
+        borderWidth: 3,
+        tension: 0.35,
+        fill: true
+      }]
+    );
+
+    // Facebook card chart
+    const fbGrowthCtx = document.getElementById('facebookGrowthChart');
+    makeLine(
+      fbGrowthCtx,
+      facebookGrowthData.map(d => d.month),
+      [{
+        label: 'Followers',
+        data: facebookGrowthData.map(d => d.followers),
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37,99,235,0.15)',
+        borderWidth: 2,
+        tension: 0.35,
+        fill: true
+      }]
+    );
+
+    // Email & Lead timeline
+    const emailLeadCtx = document.getElementById('emailLeadChart');
+    makeLine(
+      emailLeadCtx,
+      timelineData.map(d => d.month),
+      [
+        {
+          label: 'Email Contacts',
+          data: timelineData.map(d => d.emails),
+          borderColor: '#0088FE',
+          backgroundColor: 'rgba(0,136,254,0.15)',
+          borderWidth: 2,
+          tension: 0.35,
+          fill: true
+        },
+        {
+          label: 'Leads Generated',
+          data: timelineData.map(d => d.leads),
+          borderColor: '#00C49F',
+          backgroundColor: 'rgba(0,196,159,0.15)',
+          borderWidth: 2,
+          tension: 0.35,
+          fill: true
+        }
+      ]
+    );
+
+    // Community bar
+    const communityCtx = document.getElementById('communityChart');
+    makeBar(
+      communityCtx,
+      timelineData.map(d => d.month),
+      [{
+        label: 'Theotoka Community Members',
+        data: timelineData.map(d => d.community),
+        backgroundColor: '#FFBB28'
+      }]
+    );
+
+    // Engagement comparison
+    const engagementCtx = document.getElementById('engagementChart');
+    makeBar(
+      engagementCtx,
+      engagementData.map(d => d.metric),
+      [{
+        label: 'Total Count',
+        data: engagementData.map(d => d.value),
+        backgroundColor: '#0088FE'
+      }]
+    );
+  </script>
+</body>
+</html>
