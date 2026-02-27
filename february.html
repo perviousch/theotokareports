@@ -1,1 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Theotoka Laboratory Solutions — Social Media Dashboard (Feb 2026)</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111b2e;
+      --card2:#0f172a;
+      --text:#e7eefc;
+      --muted:#b7c4e3;
+      --line:#223253;
+      --good:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --blue:#3b82f6;
+      --cyan:#06b6d4;
+      --white:#ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --pad:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.35), transparent 55%),
+                  radial-gradient(900px 600px at 100% 0%, rgba(6,182,212,.25), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+    }
+    header{
+      padding:24px 18px 10px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .title{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end; justify-content:space-between;
+    }
+    h1{margin:0; font-size:22px; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:13px; margin-top:6px}
+    .badge{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+    }
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:10px 18px 28px;
+      display:grid;
+      gap:14px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      padding:var(--pad);
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+    .kpi{
+      background: rgba(17,27,46,.55);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:12px;
+    }
+    .kpi .label{font-size:12px;color:var(--muted)}
+    .kpi .value{font-size:22px;font-weight:750;margin-top:6px}
+    .delta{
+      margin-top:6px; font-size:12px; color:var(--muted);
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+    }
+    .pill{
+      font-weight:650;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .up{color:var(--good)}
+    .down{color:var(--bad)}
+    .neutral{color:var(--muted)}
+    .span-8{grid-column: span 8}
+    .span-6{grid-column: span 6}
+    .span-5{grid-column: span 5}
+    .span-4{grid-column: span 4}
+    .span-3{grid-column: span 3}
+    .span-12{grid-column: span 12}
 
+    /* simple charts */
+    .bar{
+      height:10px;
+      background: rgba(255,255,255,.10);
+      border-radius:999px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .bar > span{
+      display:block;
+      height:100%;
+      background: linear-gradient(90deg, rgba(59,130,246,.95), rgba(6,182,212,.95));
+      border-radius:999px;
+      width:0%;
+    }
+    .rows{display:grid; gap:10px}
+    .row{
+      display:grid;
+      grid-template-columns: 140px 1fr 70px;
+      gap:10px;
+      align-items:center;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .row strong{color:var(--text); font-weight:650}
+    .donutWrap{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    }
+    .donut{
+      width:120px;height:120px;border-radius:50%;
+      background:
+        conic-gradient(var(--blue) 0 78.5%, rgba(255,255,255,.10) 78.5% 100%);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: inset 0 0 0 10px rgba(17,27,46,.55);
+      position:relative;
+    }
+    .donut::after{
+      content:"";
+      position:absolute; inset:26px;
+      border-radius:50%;
+      background: rgba(17,27,46,.85);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .donutLabel{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      z-index:2;
+      font-size:12px;
+      color:var(--muted);
+      padding:0 10px;
+    }
+    .donutLabel b{display:block;color:var(--text);font-size:18px;margin-top:2px}
+    .legend{
+      display:grid; gap:6px; font-size:13px; color:var(--muted);
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px; display:inline-block; margin-right:8px;
+      border:1px solid rgba(255,255,255,.14);
+      vertical-align:middle;
+    }
+    .dot.blue{background:var(--blue)}
+    .dot.gray{background:rgba(255,255,255,.14)}
+
+    /* table */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(17,27,46,.45);
+    }
+    th,td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      text-align:left;
+      font-size:13px;
+    }
+    th{color:var(--muted); font-weight:700; background: rgba(255,255,255,.04)}
+    tr:last-child td{border-bottom:none}
+    .note{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:10px;
+      line-height:1.45;
+    }
+
+    /* CTA list */
+    .ctaList{
+      display:grid; gap:10px; margin:0; padding-left:18px; color:var(--muted);
+      font-size:13px;
+    }
+    .ctaList b{color:var(--text)}
+    .callout{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .icon{
+      width:28px;height:28px;border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(34,197,94,.14);
+      border:1px solid rgba(34,197,94,.25);
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    @media (max-width: 980px){
+      .kpis{grid-template-columns: repeat(2,1fr)}
+      .row{grid-template-columns: 120px 1fr 60px}
+      .span-8,.span-6,.span-5,.span-4,.span-3{grid-column: span 12}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title">
+      <div>
+        <h1>Theotoka Laboratory Solutions — Social Media Dashboard</h1>
+        <div class="sub">Summary for a General Manager (simple, action-focused)</div>
+      </div>
+      <div class="badge">Reporting window: Feb 2026 (LinkedIn: Jan 26–Feb 24 • Facebook: Jan 30–Feb 26)</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Top KPIs -->
+    <section class="card">
+      <h2>Quick performance snapshot</h2>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="label">Facebook Views</div>
+          <div class="value">13,704</div>
+          <div class="delta"><span class="pill up">▲ 43.5%</span> vs previous 28 days</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Facebook Interactions</div>
+          <div class="value">69</div>
+          <div class="delta"><span class="pill up">▲ 27.8%</span> (65 reactions • 2 comments • 2 shares)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">LinkedIn New Followers</div>
+          <div class="value">+36</div>
+          <div class="delta"><span class="pill up">▲ 140%</span> (Total followers: 923)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">LinkedIn Page Searches</div>
+          <div class="value">134</div>
+          <div class="delta"><span class="pill up">▲ 42.6%</span> in last 7 days</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>What this means:</b> Awareness is growing (more views and searches). The next step is to convert that attention into messages, calls, and quotation requests.
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Facebook: Who we reached -->
+      <div class="card span-6">
+        <h2>Facebook: reach quality (followers vs non-followers)</h2>
+        <div class="donutWrap">
+          <div class="donut" aria-label="Non-followers 78.5%, Followers 21.5%">
+            <div class="donutLabel">
+              Non-followers
+              <b>78.5%</b>
+              <div style="margin-top:2px">Followers: 21.5%</div>
+            </div>
+          </div>
+          <div class="legend">
+            <div><span class="dot blue"></span><b>Non-followers</b> — 78.5% (new people seeing the page)</div>
+            <div><span class="dot gray"></span><b>Followers</b> — 21.5%</div>
+            <div class="note" style="margin-top:6px">
+              <b>Opportunity:</b> Most viewers are new. We should add clearer “Follow + Message/Call for quote” prompts to turn viewers into followers and leads.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Facebook: Best content types -->
+      <div class="card span-6">
+        <h2>Facebook: content that drives views</h2>
+        <div class="rows">
+          <div class="row">
+            <strong>Photos</strong>
+            <div class="bar"><span style="width:91.1%"></span></div>
+            <div><b style="color:var(--text)">91.1%</b></div>
+          </div>
+          <div class="row">
+            <strong>Multi-photo</strong>
+            <div class="bar"><span style="width:4.9%"></span></div>
+            <div><b style="color:var(--text)">4.9%</b></div>
+          </div>
+          <div class="row">
+            <strong>Reels</strong>
+            <div class="bar"><span style="width:3.1%"></span></div>
+            <div><b style="color:var(--text)">3.1%</b></div>
+          </div>
+          <div class="row">
+            <strong>Other</strong>
+            <div class="bar"><span style="width:0.8%"></span></div>
+            <div><b style="color:var(--text)">0.8%</b></div>
+          </div>
+        </div>
+        <div class="note">
+          <b>Simple direction for March:</b> Keep photos as the main format, add more multi-photo “catalogue-style” posts, and test 1 short reel weekly.
+        </div>
+      </div>
+
+      <!-- Table to reduce page length -->
+      <div class="card span-12">
+        <h2>Summary table (keeps it simple)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>What improved</th>
+              <th>Key numbers</th>
+              <th>What to fix next</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Facebook</b></td>
+              <td>Visibility + engagement up</td>
+              <td>
+                Views: <b>13,704</b> (▲43.5%)<br>
+                Interactions: <b>69</b> (▲27.8%)
+              </td>
+              <td>Turn viewers into inquiries (messages/calls/quotes)</td>
+            </tr>
+            <tr>
+              <td><b>LinkedIn</b></td>
+              <td>Follower growth + searches up</td>
+              <td>
+                New followers: <b>+36</b> (▲140%)<br>
+                Page searches: <b>134</b> (▲42.6%)
+              </td>
+              <td>Increase posting consistency to improve reach</td>
+            </tr>
+            <tr>
+              <td><b>LinkedIn content</b></td>
+              <td>—</td>
+              <td>
+                Posts: <b>3</b><br>
+                Engagement rate: <b>2.8%</b><br>
+                Impressions: <b>177</b> (▼59.2%)
+              </td>
+              <td>Post 3× weekly and end each post with one clear call-to-action</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note">
+          <b>Plain summary:</b> We are getting attention (views/searches). We need more consistent posting and stronger calls-to-action to convert that attention into sales leads.
+        </div>
+      </div>
+
+      <!-- Audience quick notes -->
+      <div class="card span-6">
+        <h2>Facebook audience: where people are</h2>
+        <div class="rows">
+          <div class="row">
+            <strong>Lusaka</strong>
+            <div class="bar"><span style="width:70.1%"></span></div>
+            <div><b style="color:var(--text)">70.1%</b></div>
+          </div>
+          <div class="row">
+            <strong>Kitwe</strong>
+            <div class="bar"><span style="width:7.7%"></span></div>
+            <div><b style="color:var(--text)">7.7%</b></div>
+          </div>
+          <div class="row">
+            <strong>Ndola</strong>
+            <div class="bar"><span style="width:6.5%"></span></div>
+            <div><b style="color:var(--text)">6.5%</b></div>
+          </div>
+          <div class="row">
+            <strong>Others</strong>
+            <div class="bar"><span style="width:15.7%"></span></div>
+            <div><b style="color:var(--text)">15.7%</b></div>
+          </div>
+        </div>
+        <div class="note">
+          <b>March focus:</b> Keep Lusaka strong, but intentionally grow Copperbelt reach (Kitwe, Ndola) where mining/industrial labs are.
+        </div>
+      </div>
+
+      <div class="card span-6">
+        <h2>Facebook audience: key age group</h2>
+        <div class="rows">
+          <div class="row">
+            <strong>25–34</strong>
+            <div class="bar"><span style="width:50.2%"></span></div>
+            <div><b style="color:var(--text)">50.2%</b></div>
+          </div>
+          <div class="row">
+            <strong>35–44</strong>
+            <div class="bar"><span style="width:18.1%"></span></div>
+            <div><b style="color:var(--text)">18.1%</b></div>
+          </div>
+          <div class="row">
+            <strong>18–24</strong>
+            <div class="bar"><span style="width:9.8%"></span></div>
+            <div><b style="color:var(--text)">9.8%</b></div>
+          </div>
+          <div class="row">
+            <strong>Other</strong>
+            <div class="bar"><span style="width:21.9%"></span></div>
+            <div><b style="color:var(--text)">21.9%</b></div>
+          </div>
+        </div>
+        <div class="note">
+          This is a professional buying age group—good for lab technicians, procurement, and operations teams.
+        </div>
+      </div>
+
+      <!-- March CTA section -->
+      <div class="card span-12">
+        <h2>March: top CTAs (simple & sales-focused)</h2>
+
+        <div class="callout">
+          <div class="icon">✓</div>
+          <div>
+            <div style="font-weight:750; margin-bottom:6px;">Use ONE clear CTA per post (don’t mix too many in one caption).</div>
+            <div class="note" style="margin:0">This helps a reader know exactly what to do next.</div>
+          </div>
+        </div>
+
+        <ol class="ctaList" style="margin-top:12px">
+          <li><b>Request a Quotation:</b> “Message us your item list and we’ll quote today.”</li>
+          <li><b>Call/WhatsApp for Quick Pricing:</b> “Call/WhatsApp now for price & availability.”</li>
+          <li><b>Get the Product Catalogue / Price List:</b> “Comment ‘CATALOGUE’ and we’ll send it.”</li>
+          <li><b>Book a Lab Setup/Upgrade Consultation:</b> “Need a lab built or upgraded? Book a free consult.”</li>
+          <li><b>Restocking & Repeat Orders:</b> “Send your monthly consumables list—we’ll restock fast.”</li>
+          <li><b>Ask a Lab Question:</b> “Tell us what you’re testing—our team will advise the best reagents/equipment.”</li>
+        </ol>
+
+        <div class="note">
+          <b>Posting plan (simple):</b> 3 posts/week on LinkedIn + 3–4 posts/week on Facebook. Keep photos strong. Add 1 multi-photo “product set” weekly. Test 1 short reel weekly.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Manager-ready conclusion</h2>
+      <div class="note" style="font-size:13px">
+        <b>Overall:</b> We are gaining attention (Facebook views up, LinkedIn searches and followers up).  
+        <b>Next 30 days:</b> Improve consistency and conversion by posting regularly and using one strong CTA per post—focused on quotations, WhatsApp/calls, and catalogue requests.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
